@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>FMCSA API</title>
+    <title>Smart Irrigation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
             <h1 class="blog-title">Smart Water Management</h1>
             <p class="lead blog-description">Manual and Automated Entry for Soil Saturation Levels</p>
             <h2 class="blog-post-title">Soil Saturation Input</h2>
-            <fieldset>
+            <fieldset class = "block1">
                 <form>
                    <table>
                     <tr>

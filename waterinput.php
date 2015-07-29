@@ -13,9 +13,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+   
 
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
+     <script type= "text/javascript" src= "water.js"></script>
 
    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -48,27 +50,30 @@
 
           <div class="blog-post">
             <h1 class="blog-title">Smart Water Management</h1>
+            <div id = "crops">
+            </div>
             <p class="lead blog-description">Manual and Automated Entry for Soil Saturation Levels</p>
             <h2 class="blog-post-title">Soil Saturation Input</h2>
+           
             <fieldset class = "block1">
-                <form>
+                <form id = "checklevel">
                    <table>
                     <tr>
                         <td align = "left">Sensor ID </td>
-                        <td align = "left"><input type = "text" placeholder = "ID Number"></input></td>
+                        <td align = "left"><input name = "sid" type = "text" placeholder = "ID Number"></input></td>
                    </tr>
                     <tr>
                         <td align = "left">Soil Saturation Level </td>
-                        <td align = "left"><input type = "number" placeholder = "Saturation Percentage"></input></td>
+                        <td align = "left"><input name = "sat" type = "number" placeholder = "Saturation Percentage"></input></td>
                     </tr>
                     <tr>
                         <td align = "left">Water Depth</td>
-                        <td align = "left"><input type = "text" placeholder = "Depth of initial saturation detection"></input></td>
+                        <td align = "left"><input name = "depth" type = "text" placeholder = "Depth of initial saturation detection"></input></td>
                     </tr>
                     <tr>
                         <td align = "left">Date</td>
                     
-                        <td align = "left"><select>
+                        <td align = "left"><select name = "day">
                             <option value = "1">1</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -104,7 +109,7 @@
                     </tr>
                     <tr>
                         <td align = "left">Month</td>
-                        <td align = "left"><select>
+                        <td align = "left"><select name = "month">
                             <option value = "January">January</option>
                             <option value = "February">February</option>
                             <option value = "March">March</option>
@@ -121,7 +126,7 @@
                     </tr>
                     <tr>
                         <td align = "left">Year</td>
-                        <td align = "left"><select>
+                        <td align = "left"><select name = "year">
                             <option value = "2010">2010</option>
                             <option value = "2011">2011</option>
                             <option value = "2012">2012</option>
@@ -133,7 +138,7 @@
                      <tr>
                         <td align = "left">Time</td>
                         <td align = "left">
-                          <select>
+                          <select name = "hour">
                             <option value = "12">12</option>
                             <option value = "1">1</option>
                             <option value = "2">2</option>
@@ -148,7 +153,7 @@
                             <option value = "11">11</option>
                            
                          </select>
-                         <select>
+                         <select name = "minute">
                             <option value = "0">:00</option>
                             <option value = "5">:05</option>
                             <option value = "10">:10</option>
@@ -164,17 +169,24 @@
                             
                          </select>
 
-                         <select>
+                         <select name = "ampm">
                             <option value = "1">AM</option>
                             <option value = "2">PM</option>
                         </select>
-                      
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id = "sensorbutton" type = "button">Check Level</button>
+                        </td>
                     </tr>
                    </table>
                 </form>
             </fieldset>
-
            
+            <div id = "results">
+            </div>
+            
             
            
            

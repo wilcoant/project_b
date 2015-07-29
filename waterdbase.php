@@ -57,20 +57,40 @@ session_start();
         $stmt->bind_param('iiiisiiis', $sensor, $satlevel, $waterdepth, $day, $month, $year, $hour, $minute, $ampm);
         $stmt->execute();
         $stmt->close();
+        //mycrops();
         //mycrops($waterdepth, $satlevel);
         
    }
-   /* might use for crop names 
-   function mycrops($username)
-    {
+  
+   function mycrops()
+   {
        
-        $stmt = $mysqli->prepare("SELECT * FROM WHERE ");
+        $stmt = $mysqli->prepare("SELECT * FROM croplevel");
         $stmt->execute();
-        $result = $stmt->get_result();
+        $output = $stmt->get_result();
+        displaysat($result);  
         $stmt->close();
-        displaysat($result);
-   } */
-   
+        
+   }
+   function displaysat($output)
+   {//table build from object returned from sql select * query
+     
+       while($row = $output->fetch_assoc())
+       {
+           echo '<tr id="'.$row['crop'].'">';
+           echo '<td>'.$row['crop'].'</td>';
+           echo  '</tr>';
+          /*  if($satlevel < $row['satlevel'])
+           {
+               echo '<tr><td>Saturation Level is Low, Increase irrigation</td></tr>';
+           }
+           else if($satlevel > $row['satlevel'])
+           {
+               echo '<tr><td>Saturation Level is High, decrease irrigation</td></tr>';
+           } */
+        }
+        echo '</table>';   
+   }
   
   
    /*code segment to check if username and password are valid*/
